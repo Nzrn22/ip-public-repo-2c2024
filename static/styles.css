@@ -140,3 +140,24 @@ table.table td i {
     margin-top: 6px;
     font-size: 95%;
 }
+
+
+
+.col{
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 60%;
+    height: 100px;
+    width: 450px;
+    margin-top: 50px;
+}
+
+p{
+    font-size: x-small;
+    margin: 3px;
+}
+
+
+h3{
+    font-size: 150%;
+}
