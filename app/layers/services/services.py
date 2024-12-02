@@ -11,7 +11,6 @@ def buscarNombre(msg):
 
     # recorre cada dato crudo de la colección anterior, lo convierte en una Card y lo agrega a images.
    images = []
-   Card=translator.fromRequestIntoCard
    for i in range(len(json_collection)):
           Card=translator.fromRequestIntoCard(json_collection[i])
           if msg.lower() in Card.name.lower():
