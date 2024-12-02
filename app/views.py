@@ -13,19 +13,23 @@ def index_page(request):
 def home(request):
     images = []
     favourite_list = []
-    images=services.getAllImages(request)
+    images=services.getAllImages()
 
     return render(request, 'home.html', { 'images': images, 'favourite_list': favourite_list })
 
+
+
 def search(request):
     search_msg = request.POST.get('query', '')
-
     # si el texto ingresado no es vacío, trae las imágenes y favoritos desde services.py,
     # y luego renderiza el template (similar a home).
     if (search_msg != ''):
         pass
+        images=services.buscarNonbre(search_msg)
+        return render(request, 'home.html', { 'images': images})
     else:
         return redirect('home')
+
 
 
 # Estas funciones se usan cuando el usuario está logueado en la aplicación.
