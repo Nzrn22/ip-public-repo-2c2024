@@ -5,6 +5,19 @@ from ..utilities import translator
 from django.contrib.auth import get_user
 from ..transport import transport
 
+def buscarNombre(msg):
+   json_collection = []
+   json_collection=transport.getAllImages()
+
+    # recorre cada dato crudo de la colección anterior, lo convierte en una Card y lo agrega a images.
+   images = []
+   Card=translator.fromRequestIntoCard
+   for i in range(len(json_collection)):
+          Card=translator.fromRequestIntoCard(json_collection[i])
+          if msg.lower() in Card.name.lower():
+                  images.append(Card)
+   return(images)
+
 def getAllImages(input=None):
     # obtiene un listado de datos "crudos" desde la API, usando a transport.py.
     json_collection = []
