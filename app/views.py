@@ -25,7 +25,7 @@ def search(request):
     # y luego renderiza el template (similar a home).
     if (search_msg != ''):
         pass
-        images=services.buscarNonbre(search_msg)
+        images=services.buscarNombre(search_msg)
         return render(request, 'home.html', { 'images': images})
     else:
         return redirect('home')
